@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import axios from "axios";
+import {useEffect, useState} from "react"
+import Nav from './components/Nav';
+import Header from './components/Header';
+
+
+
 
 function App() {
+  
+  async function getApi() {
+    const { data } = await axios
+      .get("https://api.rawg.io/api/games?key=55b31f7ac24f4c55aff6499f85e934d8")
+      .catch((err) => {
+        console.log(err);
+      });
+    const games = data.results;
+    console.log(games);
+  }
+  
+  useEffect(()=>{
+    getApi()
+  },[])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Nav/>
+      <Header/>
+    </>
   );
 }
 
