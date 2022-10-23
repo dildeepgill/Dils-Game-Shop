@@ -1,14 +1,15 @@
 import Games from "../reuseable/Games";
 
 function TopGames({ games }) {
-  console.log(games);
   return (
-    <>
-      {games.map((singleGames) => (
-        <Games singleGames={singleGames} index={singleGames.id} />
-      ))}
-      )
-    </>
+    <div>
+      {games
+        .filter((singleGames) => singleGames.rating > 4)
+        .slice(0, 4)
+        .map((singleGames) => (
+          <Games singleGames={singleGames} key={singleGames.id} />
+        ))}
+    </div>
   );
 }
 

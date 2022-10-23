@@ -5,43 +5,41 @@ import Nav from './components/Nav';
 import Header from './components/Header';
 import Reasons from './components/Reasons';
 import TopGames from './components/TopGames';
+import Moregames from './components/Moregames';
+import Discountedgames from './components/Discountedgames';
+import Footer from './components/Footer';
 
 
-// function App() {
-//   let games;
-//   async function getApi() {
-//     const { data } = await axios   
-//       .get("https://api.rawg.io/api/games?key=55b31f7ac24f4c55aff6499f85e934d8")     
-//       .catch((err) => {
-//         console.log(err);        
-//       });     
-//   return games = data.results;
-    
-//   }
+
+function App() {
+  const [games, getGames]=useState(null)
   
-//   useEffect(()=>{
-//     getApi()
-    
-//   },[])
+  useEffect(() =>{
 
-
-function App(){
-  const [games,getGames]=useState("")
-useEffect(() => {
-  fetch("https://api.rawg.io/api/games?key=55b31f7ac24f4c55aff6499f85e934d8")
-    .then((res) => res.json())
-    .then((jsonRes) => {
-      getGames(jsonRes.results)
-    })
+axios
+  .get("https://api.rawg.io/api/games?key=57d57c4f17ab4eb6be853b6c81c89343")
+  .then((res)=>{
+    getGames(res.data.results)
+  }).catch((error)=>{
+    console.log(error)
+  })
 },[])
+
+
   return (
     <>
       <Nav/>
       <Header/>
-      <Reasons/>
-      <TopGames games={games}/>
+      <Reasons/> 
+       {games&&<TopGames games={games} />}
+       {games&&<Discountedgames games={games} />}
+       <Moregames/>
+       <Footer/>
+       
     </>
   );
 }
 
 export default App;
+
+

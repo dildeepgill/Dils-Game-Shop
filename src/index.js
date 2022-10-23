@@ -4,14 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {library} from "@fortawesome/fontawesome-svg-core"
-import{faShoppingCart} from "@fortawesome/free-solid-svg-icons"
+import{faShoppingCart, faStar, faStarHalfAlt} from "@fortawesome/free-solid-svg-icons"
 
-library.add(faShoppingCart)
+library.add(faShoppingCart, faStar, faStarHalfAlt)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
+ <React.StrictMode>
     <App />
-  /* </React.StrictMode> */
+   </React.StrictMode>    
  
 );
 
