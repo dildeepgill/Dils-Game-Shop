@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Home from './Pages/Home';
 import {Route, Routes} from "react-router-dom"
 import Allgames from './Pages/Allgames';
+import More from './Pages/More';
 
 
 
@@ -30,6 +31,8 @@ axios
       <Routes>             
           <Route path="/" exact element= {games&&<Home games={games} />}/>
           <Route path="/Allgames"  element={games&&<Allgames games={games}/>}/>
+          <Route path="/1"  element={games&&<More games={games}/>}/>
+
      </Routes>  
       <Footer/>   
 </>
