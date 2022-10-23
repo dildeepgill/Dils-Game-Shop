@@ -1,4 +1,3 @@
-import Discountedgames from "../components/Discountedgames";
 import Stars from "./Stars";
 
 function Games({ singleGames }) {

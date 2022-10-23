@@ -29,7 +29,7 @@ axios
    <Nav/>
       <Routes>             
           <Route path="/" exact element= {games&&<Home games={games} />}/>
-          <Route path="/Allgames"  element={<Allgames/>}/>
+          <Route path="/Allgames"  element={games&&<Allgames games={games}/>}/>
      </Routes>  
       <Footer/>   
 </>
