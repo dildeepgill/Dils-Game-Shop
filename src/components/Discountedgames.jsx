@@ -7,8 +7,8 @@ function Discountedgames({ games }) {
       {games
         .filter((singleGames) => singleGames.metacritic > 90)
         .slice(0, 8)
-        .map((singleGames) => (
-          <Games2 singleGames={singleGames} key={games.id} />
+        .map((singleGames, index) => (
+          <Games2 singleGames={singleGames} key={index} />
         ))}
     </>
   );

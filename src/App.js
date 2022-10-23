@@ -2,12 +2,10 @@ import './App.css';
 import axios from "axios";
 import {useEffect, useState} from "react"
 import Nav from './components/Nav';
-import Header from './components/Header';
-import Reasons from './components/Reasons';
-import TopGames from './components/TopGames';
-import Moregames from './components/Moregames';
-import Discountedgames from './components/Discountedgames';
 import Footer from './components/Footer';
+import Home from './Pages/Home';
+import {Route, Routes} from "react-router-dom"
+import Allgames from './Pages/Allgames';
 
 
 
@@ -28,15 +26,13 @@ axios
 
   return (
     <>
-      <Nav/>
-      <Header/>
-      <Reasons/> 
-       {games&&<TopGames games={games} />}
-       {games&&<Discountedgames games={games} />}
-       <Moregames/>
-       <Footer/>
-       
-    </>
+   <Nav/>
+      <Routes>             
+          <Route path="/" exact element= {games&&<Home games={games} />}/>
+          <Route path="/Allgames"  element={<Allgames/>}/>
+     </Routes>  
+      <Footer/>   
+</>
   );
 }
 

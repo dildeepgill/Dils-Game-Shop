@@ -1,10 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 function Nav() {
   return (
     <nav>
-      <a href="/">Home</a>
-      <a href="games">Games</a>
+      <Link to="/"> Home </Link>
+      <Link to="/Allgames"> Games </Link>
       <FontAwesomeIcon icon="shopping-cart" />
     </nav>
   );

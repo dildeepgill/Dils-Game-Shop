@@ -5,12 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {library} from "@fortawesome/fontawesome-svg-core"
 import{faShoppingCart, faStar, faStarHalfAlt} from "@fortawesome/free-solid-svg-icons"
+import {BrowserRouter} from "react-router-dom"
 
 library.add(faShoppingCart, faStar, faStarHalfAlt)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
  <React.StrictMode>
-    <App />
+      <BrowserRouter>
+         <App />
+      </BrowserRouter>
    </React.StrictMode>    
  
 );
