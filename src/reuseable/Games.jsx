@@ -4,7 +4,7 @@ import Stars from "./Stars";
 function Games({ singleGames }) {
   return (
     <>
-      <Link to="/1">
+      <Link to={`/games/${singleGames.id}`}>
         <img src={singleGames.background_image} width="200px" alt="" />{" "}
       </Link>
 
