@@ -6,7 +6,9 @@ function Nav() {
     <nav>
       <Link to="/"> Home </Link>
       <Link to="/Allgames"> Games </Link>
-      <FontAwesomeIcon icon="shopping-cart" />
+      <Link to="/games/cart">
+        <FontAwesomeIcon icon="shopping-cart" />
+      </Link>
     </nav>
   );
 }

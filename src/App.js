@@ -16,9 +16,15 @@ function App() {
   const [cart, setCart]= useState([])
   
   function add(singleGames){
-    setCart( (prevState) =>{
+    
+    setCart( (prevState) => [...prevState, singleGames]) 
+    const filtered = cart.map(({metacritic}) => metacritic)
+    console.log(filtered)
+  }
+  
 
-    })
+  function sub(){
+  
   }
   
   useEffect(() =>{
