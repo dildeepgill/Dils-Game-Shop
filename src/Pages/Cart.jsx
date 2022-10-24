@@ -12,8 +12,10 @@ function Cart({ games, cart, amountChanged }) {
             <p>{game.metacritic}</p>
             <p>{game.name}</p>
             <Stars rating={game.rating} />
+            <p>Price:{game.amount * game.metacritic}</p>
+            <p>Total:</p>
             <input
-              onChange={(event) => amountChanged(games, event.target.value)}
+              onChange={(event) => amountChanged(game, event.target.value)}
               type="number"
               value={game.amount}
               min="0"

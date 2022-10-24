@@ -20,16 +20,16 @@ function App() {
     setCart([...cart,{...singleGames, amount:1}])
   }
   
-  function amountChanged(games, amount){
-    setCart(cart.map(game =>{
-      if(game.id===games.id){
+  function amountChanged(game, amount){
+    setCart(cart.map(single =>{
+      if(single.id===game.id){
         return{
           ...game,
-          amount:amount,
+          amount: +amount,
         }
       }
       else {
-        return game
+        return single
       }
     }))
   }
