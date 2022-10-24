@@ -8,6 +8,7 @@ import {Route, Routes} from "react-router-dom"
 import Allgames from './Pages/Allgames';
 import More from './Pages/More';
 import Cart from './Pages/Cart';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -16,16 +17,24 @@ function App() {
   const [cart, setCart]= useState([])
   
   function add(singleGames){
-    
-    setCart( (prevState) => [...prevState, singleGames]) 
-    const filtered = cart.map(({metacritic}) => metacritic)
-    console.log(filtered)
+    setCart([...cart,{...singleGames, amount:1}])
   }
   
+  function amountChanged(games, amount){
+    setCart(cart.map(game =>{
+      if(game.id===games.id){
+        return{
+          ...game,
+          amount:amount,
+        }
+      }
+      else {
+        return game
+      }
+    }))
+  }
 
-  function sub(){
   
-  }
   
   useEffect(() =>{
 axios
@@ -45,7 +54,7 @@ axios
           <Route path="/" exact element= {games&&<Home games={games} />}/>
           <Route path="/Allgames"  element={games&&<Allgames games={games}/>}/>
           <Route path="/games/:id"  element={games&&<More games={games} add={add}/>}/>
-          <Route path="/games/cart"  element={games&&<Cart games={games} cart={cart}/> }/>
+          <Route path="/games/cart"  element={games&&<Cart games={games} amountChanged={amountChanged} cart={cart}/> }/>
      </Routes>  
       <Footer/>   
 </>
