@@ -249,3 +249,21 @@ li {
 header {
   text-align: center;
 }
+
+.reasons-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.single-reasons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+.row {
+  padding: 50px 50px;
+}
