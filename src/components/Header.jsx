@@ -1,8 +1,8 @@
 function Header() {
   return (
-    <header>
-      <h1>EXPENSIVE GAMES</h1>
-      <button>Browse Games</button>
+    <header className="container">
+      <h1>GAMES</h1>
+      <button className="header-btn">Browse Games</button>
     </header>
   );
 }

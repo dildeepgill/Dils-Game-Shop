@@ -1,7 +1,18 @@
 import { faBook } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
 import Stars from "../reuseable/Stars";
 
 function Cart({ games, cart, amountChanged }) {
+  const [total, setTotal] = useState();
+
+  useEffect(() => {
+    let totalPrice = 0;
+    cart.forEach((single) => {
+      totalPrice += single.metacritic;
+    });
+    setTotal(totalPrice);
+  }, [cart]);
+
   return (
     <>
       {cart.map((game) => {
@@ -11,9 +22,11 @@ function Cart({ games, cart, amountChanged }) {
             <img src={game.background_image} width="200px" alt="" />
             <p>{game.metacritic}</p>
             <p>{game.name}</p>
+
             <Stars rating={game.rating} />
-            <p>Price:{game.amount * game.metacritic}</p>
-            <p>Total:</p>
+
+            <p>Price: {game.amount * game.metacritic}</p>
+            <p>Total: {total}</p>
             <input
               onChange={(event) => amountChanged(game, event.target.value)}
               type="number"
