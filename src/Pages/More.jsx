@@ -14,7 +14,7 @@ function More({ games, add }) {
 
   return (
     <>
-      <img src={singleGames.background_image} width="200px" alt="" />
+      <img src={singleGames.background_image} alt="" />
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, optio.
       </p>

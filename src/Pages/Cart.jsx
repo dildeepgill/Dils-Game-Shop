@@ -1,4 +1,3 @@
-import { faBook } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import Stars from "../reuseable/Stars";
 
@@ -19,7 +18,7 @@ function Cart({ games, cart, amountChanged }) {
         console.log(game);
         return (
           <>
-            <img src={game.background_image} width="200px" alt="" />
+            <img src={game.background_image} alt="" />
             <p>{game.metacritic}</p>
             <p>{game.name}</p>
 
