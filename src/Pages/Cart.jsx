@@ -18,22 +18,26 @@ function Cart({ games, cart, amountChanged }) {
         console.log(game);
         return (
           <>
-            <img src={game.background_image} alt="" />
-            <p>{game.metacritic}</p>
-            <p>{game.name}</p>
+            <div className="games-container games-row">
+              <figure className="games-size ">
+                <img src={game.background_image} alt="" />
+              </figure>
+              <p>{game.metacritic}</p>
+              <p>{game.name}</p>
 
-            <Stars rating={game.rating} />
+              <Stars rating={game.rating} />
 
-            <p>Price: {game.amount * game.metacritic}</p>
-            <p>Total: {total}</p>
-            <input
-              onChange={(event) => amountChanged(game, event.target.value)}
-              type="number"
-              value={game.amount}
-              min="0"
-              max="50"
-              key={game.id}
-            />
+              <p>Price: {game.amount * game.metacritic}</p>
+              <p>Total: {total}</p>
+              <input
+                onChange={(event) => amountChanged(game, event.target.value)}
+                type="number"
+                value={game.amount}
+                min="0"
+                max="50"
+                key={game.id}
+              />
+            </div>
           </>
         );
       })}

@@ -14,19 +14,23 @@ function More({ games, add }) {
 
   return (
     <>
-      <img src={singleGames.background_image} alt="" />
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, optio.
-      </p>
-      <p>{singleGames.name}</p>
-      <Stars rating={singleGames.rating} />
-      {isItAdded ? (
-        <Link to="/games/cart">
-          <button>Go to CheckOut</button>
-        </Link>
-      ) : (
-        <button onClick={() => added(singleGames)}>Add to Cart</button>
-      )}
+      <div className="games-container games-row">
+        <figure className="games-size ">
+          <img src={singleGames.background_image} alt="" />
+        </figure>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, optio.
+        </p>
+        <p>{singleGames.name}</p>
+        <Stars rating={singleGames.rating} />
+        {isItAdded ? (
+          <Link to="/games/cart">
+            <button>Go to CheckOut</button>
+          </Link>
+        ) : (
+          <button onClick={() => added(singleGames)}>Add to Cart</button>
+        )}
+      </div>
     </>
   );
 }

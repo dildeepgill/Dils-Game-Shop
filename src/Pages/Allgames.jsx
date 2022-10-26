@@ -15,19 +15,21 @@ function Allgames({ games: orginal }) {
   }
   return (
     <>
-      <select
-        onChange={(event) => filteredGames(event.target.value)}
-        name=""
-        id=""
-      >
-        <option default disabled value="">
-          Sort
-        </option>
-        <option value="Rating">Rating</option>
-        <option value="HighToLow">High to Low</option>
-        <option value="LowToHigh">Low to High</option>
-      </select>
-      <div>
+      <div className="selection container row">
+        <select
+          onChange={(event) => filteredGames(event.target.value)}
+          name=""
+          id=""
+        >
+          <option default disabled value="">
+            Sort
+          </option>
+          <option value="Rating">Rating</option>
+          <option value="HighToLow">High to Low</option>
+          <option value="LowToHigh">Low to High</option>
+        </select>
+      </div>
+      <div className="games-container four container row">
         {games.map((singleGames) => (
           <Games singleGames={singleGames} key={singleGames.id} />
         ))}

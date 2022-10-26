@@ -1,5 +1,5 @@
 function Footer() {
-  return <p>CopyRight@Dildeep Gill</p>;
+  return <footer>CopyRight@Dildeep Gill</footer>;
 }
 
 export default Footer;

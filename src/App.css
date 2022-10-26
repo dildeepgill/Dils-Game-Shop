@@ -215,7 +215,20 @@ html {
   margin: 0;
   box-sizing: border-box;
 }
+figure {
+  margin: 0;
+}
 /* Navigation */
+html {
+  background-color: #e5eaf5;
+  color: black;
+  /* Medium Purple: #d0bdf4
+  
+
+Purple Pain: #8458B3
+
+Heavy Purple: #a28089 */
+}
 .container {
   width: 100%;
   max-width: 1200px;
@@ -228,7 +241,7 @@ html {
   height: 100px;
 }
 nav {
-  background-color: #abd699;
+  background-color: #a0d2eb;
 }
 
 .nav-links-container {
@@ -246,8 +259,44 @@ li {
 
 /* Header */
 
+@keyframes wiggle {
+  0%,
+  7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%,
+  100% {
+    transform: rotateZ(0);
+  }
+}
+.controller-container {
+  max-width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  rotate: 90;
+  animation: wiggle 5s linear infinite;
+  transform: rotate(90deg);
+  filter: drop-shadow(0 0 0.5rem lightgrey);
+}
+
 header {
   text-align: center;
+  height: 100vh;
 }
 
 .reasons-container {
@@ -261,9 +310,87 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 20%;
+  width: 15%;
+  height: 100px;
+  border: 3px solid #000;
 }
 
 .row {
   padding: 50px 50px;
+}
+
+/* Top Games */
+.games-container {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  padding-bottom: 50px;
+  color: #06202d;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.four {
+  flex-wrap: wrap-reverse;
+}
+
+.games-size {
+  width: 200px;
+  height: 155px;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+.singlegame-container,
+.singlegames-container {
+  transition: 500ms ease;
+}
+
+.singlegame-container:hover {
+  transform: translateY(-5px);
+}
+.singlegames-container:hover {
+  transform: translateY(-5px);
+}
+
+.info-contrainer {
+  padding-top: 10px;
+}
+
+.on-sale {
+  padding-right: 8px;
+  text-decoration: 1.5px line-through;
+  color: grey;
+}
+
+.games-row {
+  flex-direction: column;
+  align-items: center;
+}
+
+/* More Games */
+
+button {
+  cursor: pointer;
+  border: 3px solid #a0d2eb;
+  background-color: #a0d2eb;
+  height: 50px;
+  width: 200px;
+  transition: 300ms ease;
+}
+button:hover {
+  background-color: transparent;
+}
+.more-games {
+  text-align: center;
+}
+/* footer */
+
+footer {
+  text-align: center;
 }

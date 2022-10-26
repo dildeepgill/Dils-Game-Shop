@@ -8,7 +8,6 @@ import {Route, Routes} from "react-router-dom"
 import Allgames from './Pages/Allgames';
 import More from './Pages/More';
 import Cart from './Pages/Cart';
-import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -41,6 +40,7 @@ axios
   .get("https://api.rawg.io/api/games?key=57d57c4f17ab4eb6be853b6c81c89343")
   .then((res)=>{
     getGames(res.data.results)
+    console.log(games)
   }).catch((error)=>{
     console.log(error)
   })

@@ -1,18 +1,8 @@
-import { useState } from "react";
-
 function Moregames() {
-  const [open, setOpen] = useState(false);
   return (
-    <>
-      <button
-        onClick={() => {
-          setOpen(!open);
-        }}
-      >
-        Click for me Games
-      </button>
-      {open && <h1>HELLO MAKE ME APPEAR</h1>}
-    </>
+    <div className="container row more-games">
+      <button>Click for more Games</button>
+    </div>
   );
 }
 
