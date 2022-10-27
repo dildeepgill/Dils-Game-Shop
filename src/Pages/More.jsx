@@ -4,6 +4,7 @@ import Stars from "../reuseable/Stars";
 
 function More({ games, add }) {
   const [isItAdded, setIsItAdded] = useState(false);
+
   const { id } = useParams();
   const singleGames = games.find((game) => parseInt(id) === parseInt(game.id));
 
@@ -22,6 +23,8 @@ function More({ games, add }) {
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, optio.
         </p>
         <p>{singleGames.name}</p>
+        <p>${singleGames.metacritic}</p>
+
         <Stars rating={singleGames.rating} />
         {isItAdded ? (
           <Link to="/games/cart">

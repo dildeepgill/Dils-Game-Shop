@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Discountedgames from "../components/Discountedgames";
 import Stars from "./Stars";
 
 function Games2({ singleGames }) {
@@ -13,10 +12,8 @@ function Games2({ singleGames }) {
       <div className="info-contrainer">
         <p>{singleGames.name}</p>
         <Stars rating={singleGames.rating} />
-        <span className="on-sale">
-          ${<Discountedgames /> && singleGames.reviews_text_count}
-        </span>
         <span className="no-sale">${singleGames.metacritic}</span>
+        <span className="on-sale">${singleGames.reviews_text_count}</span>
       </div>
     </div>
   );

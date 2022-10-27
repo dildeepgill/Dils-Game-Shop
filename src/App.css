@@ -296,7 +296,7 @@ li {
 
 header {
   text-align: center;
-  height: 100vh;
+  height: calc(100vh-100px);
 }
 
 .reasons-container {
@@ -324,6 +324,7 @@ header {
   display: flex;
   gap: 50px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 h2 {
@@ -362,15 +363,10 @@ img {
   padding-top: 10px;
 }
 
-.on-sale {
-  padding-right: 8px;
+.no-sale {
   text-decoration: 1.5px line-through;
   color: grey;
-}
-
-.games-row {
-  flex-direction: column;
-  align-items: center;
+  padding-right: 8px;
 }
 
 /* More Games */
@@ -394,3 +390,5 @@ button:hover {
 footer {
   text-align: center;
 }
+
+/* CART */
