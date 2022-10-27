@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Stars from "../reuseable/Stars";
 
-function Cart({ games, cart, amountChanged }) {
+function Cart({ games, cart, amountChanged, remove }) {
   function price(game) {
     let price = 0;
     return (price += game.amount * game.metacritic);
@@ -18,7 +18,6 @@ function Cart({ games, cart, amountChanged }) {
   return (
     <>
       {cart.map((game) => {
-        console.log(game);
         return (
           <>
             <div className="games-container">
@@ -26,11 +25,13 @@ function Cart({ games, cart, amountChanged }) {
                 <img src={game.background_image} alt="" />
               </figure>
               <div className="car-info">
-                <p>{game.metacritic}</p>
                 <p>{game.name}</p>
+                <p>{game.metacritic}</p>
+
                 <Stars rating={game.rating} />
                 <p>Price: {price(game)}</p>
                 <p>Total: {totalPrice()}</p>
+                <button onClick={() => remove(game.id)}>Remove</button>
                 <input
                   onChange={(event) => amountChanged(game, event.target.value)}
                   // game is single object with properties

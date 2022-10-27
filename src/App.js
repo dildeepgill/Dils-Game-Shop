@@ -14,8 +14,7 @@ import Cart from './Pages/Cart';
 function App() {
   const [games, getGames]=useState(null)
   const [cart, setCart]= useState([])
-  console.log(cart)
-  
+ 
   
   function add(singleGames){
     setCart([...cart,{...singleGames, amount:1}])
@@ -42,6 +41,11 @@ function App() {
     }))
   }
 
+  function remove(id) {
+   console.log(id)
+   setCart(cart.filter(same=> !(same.id ===id)))
+  }
+
   
   
   useEffect(() =>{
@@ -64,7 +68,7 @@ axios
           <Route path="/" exact element= {games&&<Home games={games} />}/>
           <Route path="/Allgames"  element={games&&<Allgames games={games}/>}/>
           <Route path="/games/:id"  element={games&&<More games={games} add={add}/>}/>
-          <Route path="/games/cart"  element={games&&<Cart games={games} amountChanged={amountChanged} cart={cart}/> }/>
+          <Route path="/games/cart"  element={games&&<Cart games={games} amountChanged={amountChanged} cart={cart} remove={remove}/> }/>
      </Routes>  
       <Footer/>   
 </>
