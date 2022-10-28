@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
-function Nav() {
+function Nav({ itemsInCart }) {
   return (
     <nav>
       <div className="container sidebyside">
@@ -18,6 +18,7 @@ function Nav() {
               <FontAwesomeIcon icon="shopping-cart" />
             </Link>
           </li>
+          <span>{itemsInCart}</span>
         </ul>
       </div>
     </nav>

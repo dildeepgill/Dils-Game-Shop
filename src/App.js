@@ -41,6 +41,14 @@ function App() {
     }))
   }
 
+  function itemsInCart(){
+    let num=0
+    cart.forEach(game => {
+      num+= game.amount
+    })
+    return num
+  }
+
   function remove(id) {
    console.log(id)
    setCart(cart.filter(same=> !(same.id ===id)))
@@ -63,7 +71,7 @@ axios
 
   return (
     <>
-   <Nav/>
+   <Nav itemsInCart={itemsInCart()}/>
       <Routes>             
           <Route path="/" exact element= {games&&<Home games={games} />}/>
           <Route path="/Allgames"  element={games&&<Allgames games={games}/>}/>
