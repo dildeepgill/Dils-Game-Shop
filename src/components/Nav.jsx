@@ -16,9 +16,9 @@ function Nav({ itemsInCart }) {
           <li className="link">
             <Link to="/games/cart">
               <FontAwesomeIcon icon="shopping-cart" />
+              <span className="nav-number">{itemsInCart}</span>
             </Link>
           </li>
-          <span>{itemsInCart}</span>
         </ul>
       </div>
     </nav>

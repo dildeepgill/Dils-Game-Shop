@@ -17,24 +17,33 @@ function Cart({ games, cart, amountChanged, remove }) {
 
   return (
     <>
-      {cart.map((game) => {
-        return (
-          <>
-            <div className="games-container">
-              <figure className="games-size ">
-                <img src={game.background_image} alt="" />
-              </figure>
-              <div className="car-info">
-                <p>{game.name}</p>
-                <p>{game.metacritic}</p>
+      {cart.length === 0 ? (
+        <h2 className="no-games"> No games in cart</h2>
+      ) : null}
+      <section className="cart">
+        {cart.map((game) => {
+          return (
+            <>
+              <div className="games-container cart-space">
+                <figure className="games-size cart-img-size">
+                  <img src={game.background_image} alt="" />
+                </figure>
+                <div className="cart-info">
+                  <p className="cart-name">{game.name}</p>
 
-                <Stars rating={game.rating} />
-                <p>Price: {price(game)}</p>
-                <p>Total: {totalPrice()}</p>
-                <button onClick={() => remove(game.id)}>Remove</button>
+                  <p className="cart-name">
+                    <Stars rating={game.rating} />
+                  </p>
+                  <p className="cart-name">Price: {price(game)}</p>
+                  <div
+                    className="cart-remove cart-name"
+                    onClick={() => remove(game.id)}
+                  >
+                    Remove
+                  </div>
+                </div>
                 <input
                   onChange={(event) => amountChanged(game, event.target.value)}
-                  // game is single object with properties
                   type="number"
                   value={game.amount}
                   min="0"
@@ -42,10 +51,13 @@ function Cart({ games, cart, amountChanged, remove }) {
                   key={game.id}
                 />
               </div>
-            </div>
-          </>
-        );
-      })}
+            </>
+          );
+        })}
+        {cart.length !== 0 && (
+          <p className="cart-total">Total: {totalPrice()}</p>
+        )}
+      </section>
     </>
   );
 }

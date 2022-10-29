@@ -4,6 +4,7 @@ import Games from "../reuseable/Games";
 function TopGames({ games }) {
   return (
     <section className="Discounted container row">
+      <h2>Top Games</h2>
       <div className="games-container">
         {games
           .filter((singleGames) => singleGames.rating > 4)

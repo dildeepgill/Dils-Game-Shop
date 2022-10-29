@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
+
 function Moregames() {
   return (
     <div className="container row more-games">
-      <button>Click for more Games</button>
+      <Link to="/Allgames">
+        <button>Click for more Games</button>
+      </Link>
     </div>
   );
 }

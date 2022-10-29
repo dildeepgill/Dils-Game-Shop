@@ -15,7 +15,7 @@ function More({ games, add }) {
 
   return (
     <>
-      <div className="games-container games-row">
+      <div className="games-container row games-row">
         <figure className="games-size games-size-more">
           <img src={singleGames.background_image} alt="" />
         </figure>
