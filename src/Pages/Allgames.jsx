@@ -6,11 +6,11 @@ function Allgames({ games: orginal }) {
 
   function filteredGames(value) {
     if (value === "Rating") {
-      setGames1(orginal.slice().sort((a, b) => b.rating - a.rating));
+      setGames1(orginal.slice().sort((a, b) => a.rating - b.rating));
     } else if (value === "HighToLow") {
-      setGames1(orginal.slice().sort((a, b) => b.metacritic - a.metacritic));
-    } else if (value === "LowToHigh") {
       setGames1(orginal.slice().sort((a, b) => a.metacritic - b.metacritic));
+    } else if (value === "LowToHigh") {
+      setGames1(orginal.slice().sort((a, b) => b.metacritic - a.metacritic));
     }
   }
   return (

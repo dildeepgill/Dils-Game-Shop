@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Stars from "../reuseable/Stars";
@@ -17,6 +18,11 @@ function More({ games, add }) {
     <>
       <div className="games-container row games-row">
         <figure className="games-size games-size-more">
+          <div className="arrow">
+            <Link to="/allgames">
+              <FontAwesomeIcon icon="fa-solid fa-left-long" />
+            </Link>
+          </div>
           <img src={singleGames.background_image} alt="" />
         </figure>
 

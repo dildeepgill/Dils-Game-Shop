@@ -229,6 +229,10 @@ Purple Pain: #8458B3
 
 Heavy Purple: #a28089 */
 }
+
+.nav-logo {
+  width: 12%;
+}
 .container {
   width: 100%;
   max-width: 1200px;
@@ -315,10 +319,39 @@ li {
   filter: drop-shadow(0 0 0.5rem lightgrey);
 }
 
+.controller-container img {
+  object-fit: contain;
+}
+
 header {
-  text-align: center;
   min-height: calc(100vh - 130px);
 }
+.header-btn {
+  /* margin: 0 auto; */
+  transform: translateY(25px);
+}
+.header-img {
+  display: flex;
+  margin-top: 40px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.header-content {
+  width: 50%;
+  line-height: 1.3;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5%;
+}
+
+.first {
+  width: 50%;
+  height: 100%;
+}
+
 .header-section {
   display: flex;
   align-items: center;
@@ -340,9 +373,10 @@ header {
   width: 90%;
   margin-bottom: 15px;
   height: 100px;
-  border: 5px solid rgb(132, 92, 132);
+  border: 5px solid rgb(0, 0, 0);
   font-size: 20px;
   font-weight: 600;
+  box-shadow: 10px 10px 5px rgb(220, 173, 230);
 }
 
 .row {
@@ -395,6 +429,7 @@ h2 {
 img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 .singlegame-container,
 .singlegames-container {
@@ -451,12 +486,14 @@ footer {
 }
 
 /* CART */
+
 .cart {
   min-height: calc(100vh - 130px);
 }
 
 .no-games {
   min-height: calc(100vh - 130px);
+  transform: translateY(70px);
 }
 
 .cart-remove {
@@ -477,6 +514,7 @@ input {
 .cart-img-size {
   width: 130px;
   height: 100px;
+  object-fit: cover;
 }
 .cart-name {
   padding-bottom: 5px;
@@ -488,4 +526,75 @@ input {
   padding-top: 10px;
   margin: 0 auto;
   transform: translateX(250px);
+}
+
+.arrow {
+  transform: translateY(-35px);
+
+  font-size: 25px;
+}
+
+.star-half-alt,
+.star {
+  background-color: red !important;
+}
+
+@media (max-width: 1000px) {
+  header {
+    padding: 0 !important;
+  }
+  .header-btn {
+    margin: 0 auto;
+  }
+
+  .header-section {
+    flex-direction: column;
+  }
+  .header-image-para {
+    width: 100%;
+  }
+  .header-content {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .games-para-info {
+    width: 100%;
+    max-width: 520px;
+  }
+  .games-size-more {
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 705px) {
+  .cart-total {
+    transform: translateX(0px);
+  }
+  .cart-img-size {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+  }
+  .cart-name {
+    padding-bottom: 20px;
+  }
+  input {
+    transform: translateY(-50px);
+  }
+}
+@media (max-width: 559px) {
+  input {
+    transform: translateY(-20px);
+  }
+  .cart-img-size {
+    transform: translateY(25px);
+  }
+}
+
+@media (max-width: 550px) {
+  input {
+    transform: translateY(-50px);
+  }
 }

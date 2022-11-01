@@ -18,7 +18,7 @@ function Cart({ games, cart, amountChanged, remove }) {
   return (
     <>
       {cart.length === 0 ? (
-        <h2 className="no-games"> No games in cart</h2>
+        <h2 className="no-games"> No games in cart :(</h2>
       ) : null}
       <section className="cart">
         {cart.map((game) => {
