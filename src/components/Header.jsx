@@ -1,9 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AllReasons from "../reuseable/AllReasons";
 import controller from "./Assets/purple.png";
-import bg from "./Assets/bg.jpg";
 
-function Header() {
+function Header({ scroll }) {
   return (
     <header className="container row">
       <div className="header-section">
@@ -14,7 +13,7 @@ function Header() {
         </div>
 
         <div className="header-content">
-          <h1>One stop shop for all games</h1>
+          <h1>One stop shop for all games!</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quam
             maiores cum nobis. Assumenda saepe inventore velit illo error sint
@@ -26,7 +25,14 @@ function Header() {
             quibusdam consequatur voluptatem architecto a qui voluptate
             accusamus!
           </p>
-          <button className="header-btn">Browse Games</button>{" "}
+          <a href="#top-games">
+            <button
+              onClick={() => scroll.current.scrollIntoView()}
+              className="header-btn"
+            >
+              Browse Games
+            </button>
+          </a>
         </div>
       </div>
     </header>

@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import Games from "../reuseable/Games";
 
-function TopGames({ games }) {
+function TopGames({ games, scroll }) {
   return (
     <section className="Discounted container row">
-      <h2>Top Games</h2>
+      <h2 id="top-games" ref={scroll}>
+        Top Games
+      </h2>
       <div className="games-container">
         {games
           .filter((singleGames) => singleGames.rating > 4)

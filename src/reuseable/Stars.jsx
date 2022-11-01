@@ -1,10 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Stars({ rating }) {
+function Stars(props) {
   return (
     <div>
-      {new Array(Math.floor(rating)).fill(<FontAwesomeIcon icon="star" />)}
-      {rating > 4.5 ? <FontAwesomeIcon icon="star-half-alt" /> : null}
+      {new Array(Math.floor(props.rating)).fill(0).map((num, index) => (
+        <FontAwesomeIcon icon="star" key={index} />
+      ))}
+      {props.rating > 4.5 ? <FontAwesomeIcon icon="star-half-alt" /> : null}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import './App.css';
 import axios from "axios";
-import {useEffect, useState} from "react"
+import {useEffect, useState, useRef} from "react"
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Home from './Pages/Home';
@@ -14,7 +14,7 @@ import Cart from './Pages/Cart';
 function App() {
   const [games, getGames]=useState(null)
   const [cart, setCart]= useState([])
- 
+  const scroll = useRef();
   
   function add(singleGames){
     setCart([...cart,{...singleGames, amount:1}])
@@ -55,15 +55,17 @@ function App() {
   }
 
   
-  
   useEffect(() =>{
+    
 axios
   .get("https://api.rawg.io/api/games?key=57d57c4f17ab4eb6be853b6c81c89343")
   .then((res)=>{
+    
     getGames(res.data.results)
     
   }).catch((error)=>{
     console.log(error)
+    
     
   })
 },[])
@@ -72,12 +74,20 @@ axios
   return (
     <>
    <Nav itemsInCart={itemsInCart()}/>
-      <Routes>             
+   {games?
+   <><Routes>            
           <Route path="/" exact element= {games&&<Home games={games} />}/>
-          <Route path="/Allgames"  element={games&&<Allgames games={games}/>}/>
+          <Route path="/Allgames"  element={games&&<Allgames games={games} scroll={scroll}/>}/>
           <Route path="/games/:id"  element={games&&<More games={games} add={add}/>}/>
           <Route path="/games/cart"  element={games&&<Cart games={games} amountChanged={amountChanged} cart={cart} remove={remove}/> }/>
-     </Routes>  
+     </Routes> 
+     </>: 
+<div className="spaces" ><div class="ring">Loading
+  <span></span>
+</div></div>
+
+
+  }
       <Footer/>   
 </>
   );

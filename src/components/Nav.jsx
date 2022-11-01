@@ -1,13 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import Logo from "./Assets/logo1.png";
+import Logo from "./Assets/gameshop.png";
 
 function Nav({ itemsInCart }) {
   return (
     <nav>
       <div className="container sidebyside">
         <figure className="nav-logo">
-          <img src={Logo} alt="logo about dils game shop" />
+          <Link to="/">
+            <img src={Logo} alt="logo about dils game shop" />
+          </Link>
         </figure>
         <ul className="nav-links-container">
           <li className="link">
@@ -19,7 +21,7 @@ function Nav({ itemsInCart }) {
           <li className="link">
             <Link to="/games/cart">
               <FontAwesomeIcon icon="shopping-cart" />
-              <span className="nav-number">{itemsInCart}</span>
+              <strong className="nav-number">{itemsInCart}</strong>
             </Link>
           </li>
         </ul>

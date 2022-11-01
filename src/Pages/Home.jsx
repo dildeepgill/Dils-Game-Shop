@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Discountedgames from "../components/Discountedgames";
 import Header from "../components/Header";
 import Moregames from "../components/Moregames";
