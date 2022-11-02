@@ -1,6 +1,6 @@
 import controller from "./Assets/purple.png";
 
-function Header({ scroll }) {
+function Header({ executeScroll }) {
   return (
     <header className="container row">
       <div className="header-section">
@@ -23,14 +23,10 @@ function Header({ scroll }) {
             quibusdam consequatur voluptatem architecto a qui voluptate
             accusamus!
           </p>
-          <a href="#top-games">
-            <button
-              onClick={() => scroll.current.scrollIntoView()}
-              className="header-btn"
-            >
-              Browse Games
-            </button>
-          </a>
+
+          <button className="header-btn" onClick={executeScroll}>
+            Browse Games
+          </button>
         </div>
       </div>
     </header>

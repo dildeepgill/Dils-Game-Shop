@@ -15,7 +15,9 @@ import Loading from './reuseable/Loading';
 function App() {
   const [games, getGames]=useState(null)
   const [cart, setCart]= useState([])
-  const scroll = useRef();
+  const myRef = useRef(null)
+
+  const executeScroll = () => myRef.current.scrollIntoView()
   
   function add(singleGames){
     setCart([...cart,{...singleGames, amount:1}])
@@ -45,14 +47,12 @@ function App() {
   function itemsInCart(){
     let num=0
     for (let price of cart) {
-      console.log(price)
       num+= price.amount
     }
     return num
   }
 
   function remove(id) {
-   console.log(id)
    setCart(cart.filter(same => !(same.id ===id)))
   }
 
@@ -75,8 +75,8 @@ axios
    {games?
    
    <><Routes>
-          <Route path="/"  element= {games&&<Home games={games} />}/>
-          <Route path="/Allgames"  element={games&&<Allgames games={games} scroll={scroll}/>}/>
+          <Route path="/"  element= {games&&<Home games={games} executeScroll={executeScroll} myRef={myRef}/>}/>
+          <Route path="/Allgames"  element={games&&<Allgames games={games} />}/>
           <Route path="/games/:id"  element={games&&<More games={games} add={add}/>}/>
           <Route path="/games/cart"  element={games&&<Cart games={games} amountChanged={amountChanged} cart={cart} remove={remove}/> }/>
      </Routes> 

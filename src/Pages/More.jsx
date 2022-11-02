@@ -7,7 +7,6 @@ function More({ games, add }) {
   const [isItAdded, setIsItAdded] = useState(false);
 
   const gamesId = useParams();
-  console.log(gamesId.id);
   const singleGames = games.find(
     (game) => parseInt(gamesId.id) === parseInt(game.id)
   );

@@ -31,7 +31,7 @@ function Cart({ cart, amountChanged, remove }) {
                   <p className="cart-name">{game.name}</p>
 
                   <p className="cart-name">
-                    <Stars rating={game.rating} />
+                    <Stars rating={game.rating} key={game.id} />
                   </p>
                   <p className="cart-name">Price: {price(game)}</p>
                   <div
@@ -54,7 +54,7 @@ function Cart({ cart, amountChanged, remove }) {
           );
         })}
         {cart.length !== 0 && (
-          <p className="cart-total">Total: {totalPrice()}</p>
+          <div className="cart-total">Total: {totalPrice()}</div>
         )}
       </section>
     </>

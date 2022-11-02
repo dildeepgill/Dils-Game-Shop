@@ -3,11 +3,11 @@ import Header from "../components/Header";
 import Moregames from "../components/Moregames";
 import TopGames from "../components/TopGames";
 
-function Home({ games }) {
+function Home({ games, executeScroll, myRef }) {
   return (
     <>
-      <Header />
-      <TopGames games={games} />
+      <Header executeScroll={executeScroll} />
+      <TopGames games={games} myRef={myRef} />
       <Discountedgames games={games} />
       <Moregames />
     </>

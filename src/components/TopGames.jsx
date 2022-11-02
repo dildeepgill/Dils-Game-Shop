@@ -1,9 +1,9 @@
 import Games from "../reuseable/Games";
 
-function TopGames({ games, scroll }) {
+function TopGames({ games, myRef }) {
   return (
     <section className="Discounted container row">
-      <h2 id="top-games" ref={scroll}>
+      <h2 id="top-games" ref={myRef}>
         Top Games
       </h2>
       <div className="games-container">
