@@ -20,7 +20,7 @@ function Cart({ cart, amountChanged, remove }) {
         <h2 className="no-games"> No games in cart :(</h2>
       ) : null}
       <section className="cart">
-        {cart.map((game) => {
+        {cart.map((game, index) => {
           return (
             <>
               <div className="games-container cart-space">
@@ -47,7 +47,7 @@ function Cart({ cart, amountChanged, remove }) {
                   value={game.amount}
                   min="0"
                   max="50"
-                  key={game.id}
+                  key={index}
                 />
               </div>
             </>

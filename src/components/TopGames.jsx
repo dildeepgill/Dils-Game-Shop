@@ -10,8 +10,8 @@ function TopGames({ games, scroll }) {
         {games
           .filter((singleGames) => singleGames.rating > 4)
           .slice(0, 4)
-          .map((singleGames) => (
-            <Games singleGames={singleGames} key={singleGames.id} />
+          .map((singleGames, index) => (
+            <Games singleGames={singleGames} key={index} />
           ))}
       </div>
     </section>

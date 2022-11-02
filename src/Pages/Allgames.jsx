@@ -30,8 +30,8 @@ function Allgames({ games: orginal }) {
         </select>
       </div>
       <div className="games-container four container row">
-        {games.map((singleGames) => (
-          <Games singleGames={singleGames} key={singleGames.id} />
+        {games.map((singleGames, index) => (
+          <Games singleGames={singleGames} key={index} />
         ))}
       </div>
     </>
