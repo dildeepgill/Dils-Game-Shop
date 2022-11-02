@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Games from "../reuseable/Games";
 
 function TopGames({ games, scroll }) {

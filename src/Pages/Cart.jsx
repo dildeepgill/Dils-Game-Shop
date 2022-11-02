@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
 import Stars from "../reuseable/Stars";
 
-function Cart({ games, cart, amountChanged, remove }) {
+function Cart({ cart, amountChanged, remove }) {
   function price(game) {
     let price = 0;
     return (price += game.amount * game.metacritic);
@@ -9,9 +8,9 @@ function Cart({ games, cart, amountChanged, remove }) {
 
   function totalPrice() {
     let totalPrice = 0;
-    cart.forEach((game) => {
-      totalPrice += game.amount * game.metacritic;
-    });
+    for (let price of cart) {
+      totalPrice += price.amount * price.metacritic;
+    }
     return totalPrice;
   }
 

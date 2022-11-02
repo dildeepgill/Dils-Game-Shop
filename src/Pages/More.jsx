@@ -6,8 +6,11 @@ import Stars from "../reuseable/Stars";
 function More({ games, add }) {
   const [isItAdded, setIsItAdded] = useState(false);
 
-  const { id } = useParams();
-  const singleGames = games.find((game) => parseInt(id) === parseInt(game.id));
+  const gamesId = useParams();
+  console.log(gamesId.id);
+  const singleGames = games.find(
+    (game) => parseInt(gamesId.id) === parseInt(game.id)
+  );
 
   function added(singleGames) {
     setIsItAdded(true);
@@ -23,7 +26,10 @@ function More({ games, add }) {
               <FontAwesomeIcon icon="fa-solid fa-left-long" />
             </Link>
           </div>
-          <img src={singleGames.background_image} alt="" />
+          <img
+            src={singleGames.background_image}
+            alt="background images of games"
+          />
         </figure>
 
         <div className="games-para-info">

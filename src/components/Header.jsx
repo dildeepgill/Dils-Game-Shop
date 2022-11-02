@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import AllReasons from "../reuseable/AllReasons";
 import controller from "./Assets/purple.png";
 
 function Header({ scroll }) {

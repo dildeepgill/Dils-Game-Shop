@@ -21,7 +21,7 @@ function Allgames({ games: orginal }) {
           name=""
           id=""
         >
-          <option default disabled value="">
+          <option defaultValue disabled>
             Sort
           </option>
           <option value="Rating">Rating</option>

@@ -12,8 +12,8 @@ function Games2({ singleGames }) {
       <div className="info-contrainer">
         <p>{singleGames.name}</p>
         <Stars rating={singleGames.rating} />
-        <strong className="no-sale">${singleGames.metacritic}</strong>
-        <strong className="on-sale">${singleGames.reviews_text_count}</strong>
+        <b className="no-sale">${singleGames.metacritic}</b>
+        <b className="on-sale">${singleGames.reviews_text_count}</b>
       </div>
     </div>
   );
