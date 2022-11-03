@@ -246,6 +246,14 @@ nav {
   font-weight: 300;
   color: black;
 }
+
+.purple {
+  color: rgb(165, 59, 165);
+}
+
+h1 {
+  font-size: 1.6rem;
+}
 .nav-number {
   transform: translateY(5px);
   margin-left: -8px;
@@ -537,8 +545,35 @@ input {
   .nav-logo {
     width: 18%;
   }
+  .header-content {
+    padding-top: 0;
+    padding-bottom: 8%;
+  }
+  .header-btn {
+    display: none;
+  }
+  h1 {
+    margin: 0 0;
+    margin-bottom: 10px;
+    font-size: 1.6rem !important;
+  }
+
+  .header-section {
+    gap: 0px;
+  }
+}
+@media (max-width: 1111px) {
+  .games-row {
+    margin-top: 25px;
+  }
 }
 
+@media (max-width: 551px) {
+  .games-size {
+    width: 300px;
+    height: 245px;
+  }
+}
 @media (max-width: 768px) {
   .games-para-info {
     width: 100%;
