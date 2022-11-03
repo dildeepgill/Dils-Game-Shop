@@ -11,7 +11,10 @@ function Header({ executeScroll }) {
         </div>
 
         <div className="header-content">
-          <h1>One stop shop for all games!</h1>
+          <h1>
+            One stop shop for all your{" "}
+            <strong class="purple">OVERPRICED</strong> games!
+          </h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quam
             maiores cum nobis. Assumenda saepe inventore velit illo error sint
