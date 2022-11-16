@@ -21,18 +21,11 @@ function App() {
   
   function add(singleGames){
     setCart([...cart,{...singleGames, amount:1}])
-    // cart is array of Objects that we spread 
-    // singleGames is 1 object of game that we clicked and spread all properties 
+    
   }
-  
   function amountChanged(game, amount){
-    // game is single object with properties                
-
     setCart(cart.map(singleGames =>{
-          // singleGames is 1 object of game that we clicked and spread all properties 
       if(singleGames.id===game.id){
-        // single game is on more page
-        // game is in cart 
         return{
           ...game,
           amount: parseInt(amount),
@@ -43,6 +36,7 @@ function App() {
       }
     }))
   }
+  
 
   function itemsInCart(){
     let num=0
@@ -77,7 +71,7 @@ axios
    <><Routes>
           <Route path="/"  element= {games&&<Home games={games} executeScroll={executeScroll} myRef={myRef}/>}/>
           <Route path="/Allgames"  element={games&&<Allgames games={games} />}/>
-          <Route path="/games/:id"  element={games&&<More games={games} add={add}/>}/>
+          <Route path="/games/:id"  element={games&&<More games={games}  add={add}/>}/>
           <Route path="/games/cart"  element={games&&<Cart games={games} amountChanged={amountChanged} cart={cart} remove={remove}/> }/>
      </Routes> 
      </>: 

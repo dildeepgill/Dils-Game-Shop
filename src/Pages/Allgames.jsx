@@ -20,13 +20,14 @@ function Allgames({ games: orginal }) {
           onChange={(event) => filteredGames(event.target.value)}
           name=""
           id=""
+          defaultValue={"DEFAULT"}
         >
-          <option defaultValue disabled>
+          <option value="DEFAULT" disabled>
             Sort
           </option>
           <option value="Rating">Rating</option>
-          <option value="HighToLow">High to Low</option>
-          <option value="LowToHigh">Low to High</option>
+          <option value="HighToLow">High to Low: By Price</option>
+          <option value="LowToHigh">Low to High: By Price</option>
         </select>
       </div>
       <div className="games-container four container row">
