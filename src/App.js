@@ -12,17 +12,22 @@ import Loading from './reuseable/Loading';
 
 
 
+
 function App() {
   const [games, getGames]=useState(null)
   const [cart, setCart]= useState([])
   const myRef = useRef(null)
-
+  // Function to scroll to a specific component
   const executeScroll = () => myRef.current.scrollIntoView()
-  
+   
+  // Function to add a game to the cart by taking current value of cart
+  // and adding an object to it of single games from more page
+  // add amount property 
   function add(singleGames){
     setCart([...cart,{...singleGames, amount:1}])
-    
   }
+
+  // Function to update the amount of a game in the cart
   function amountChanged(game, amount){
     setCart(cart.map(singleGames =>{
       if(singleGames.id===game.id){
@@ -37,7 +42,7 @@ function App() {
     }))
   }
   
-
+// Function to get the number of items in the cart
   function itemsInCart(){
     let num=0
     for (let price of cart) {
@@ -45,14 +50,13 @@ function App() {
     }
     return num
   }
-
+// Function to remove a game from the cart
   function remove(id) {
    setCart(cart.filter(same => !(same.id ===id)))
   }
 
-  
+   // UseEffect hook to fetch games from the API
   useEffect(() =>{
-    
 axios
   .get("https://api.rawg.io/api/games?key=57d57c4f17ab4eb6be853b6c81c89343")
   .then((res)=>{
@@ -76,8 +80,6 @@ axios
      </Routes> 
      </>: 
      <Loading/>
-
-
 
   }
       <Footer/>   

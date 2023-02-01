@@ -4,6 +4,7 @@ import Games from "../reuseable/Games";
 function Allgames({ games: orginal }) {
   const [games, setGames1] = useState(orginal);
 
+  // if user clicks rating sort the games array based off highest rating to lowest
   function filteredGames(value) {
     if (value === "Rating") {
       setGames1(orginal.slice().sort((a, b) => a.rating - b.rating));
@@ -13,6 +14,7 @@ function Allgames({ games: orginal }) {
       setGames1(orginal.slice().sort((a, b) => b.metacritic - a.metacritic));
     }
   }
+  // onchange function passed the event.target.value
   return (
     <>
       <div className="selection container row">

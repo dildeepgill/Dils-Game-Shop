@@ -7,10 +7,16 @@ function More({ games, add }) {
   const [isItAdded, setIsItAdded] = useState(false);
 
   const gamesId = useParams();
+  // brings back an object: Object { id: "11859" }
+
+  // Find the game object in the "games" array that has a matching "id"
   const singleGames = games.find(
+    // Compare the "id" property from the URL parameters (stored in "gamesId.id")
+    // and the "id" property of each game object (game.id) as integers
     (game) => parseInt(gamesId.id) === parseInt(game.id)
   );
 
+  // to make sure games have been added
   function added(singleGames) {
     setIsItAdded(true);
     add(singleGames);
@@ -48,6 +54,7 @@ function More({ games, add }) {
               <button>Go to CheckOut</button>
             </Link>
           ) : (
+            // onclick add the single game and send to add on app page. if true show checkout
             <button onClick={() => added(singleGames)}>Add to Cart</button>
           )}
         </div>
